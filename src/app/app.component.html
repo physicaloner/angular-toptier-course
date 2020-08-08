@@ -16,9 +16,19 @@
 
 <div class="content" role="main">
 
-  <h1>{{customValue.counter}}</h1>
-  <button (click)="onClickMessage()">Couter +</button>
+  <form [formGroup]="form">
+    <div formArrayName="counterArray">
+      <div *ngFor="let item of getFormArray().controls; let i = index">
+        <div [formGroupName]="i">
+          <input type="number" placeholder="couter" formControlName="index">
+        </div>
+      </div>
+    </div>
+    <input type="text" autocomplete="user-test" placeholder="username" formControlName="username" />
+    <input type="password" autocomplete="pass-test" placeholder="password" formControlName="password" />
+  </form>
 
+  <button (click)="onClickMessage()">Show Value</button>
 
   <svg id="clouds" alt="Gray Clouds Background" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677"
     viewBox="0 0 2611.084 485.677">
