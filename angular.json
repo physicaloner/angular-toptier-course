@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "toptier-angular-course"
+    }
+  },
+  "defaultProject": "toptier-angular-course",
+  "cli": {
+    "analytics": false
+  }
 }
